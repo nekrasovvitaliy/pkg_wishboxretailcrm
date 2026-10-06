@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="pkg_wishboxretailcrm" default="make" basedir=".">
+    <property name="package" value="pkg_wishboxretailcrm.zip"/>
+
+    <target name="make" description="Build the Joomla package.">
+        <delete quiet="yes">
+            <fileset dir=".">
+                <include name="${package}"/>
+            </fileset>
+        </delete>
+
+        <zip destfile="plg_system_wishboxretailcrm.zip">
+            <fileset dir="./plg_system_wishboxretailcrm">
+                <include name="language/**"/>
+                <include name="services/**"/>
+                <include name="src/**"/>
+                <include name="script.php"/>
+                <include name="wishboxretailcrm.xml"/>
+            </fileset>
+        </zip>
+
+        <zip destfile="${package}">
+            <fileset dir=".">
+                <include name="plg_system_wishboxretailcrm.zip"/>
+                <include name="language/**"/>
+                <include name="script.php"/>
+                <include name="pkg_wishboxretailcrm.xml"/>
+            </fileset>
+        </zip>
+
+        <delete quiet="yes">
+            <fileset dir=".">
+                <include name="plg_system_wishboxretailcrm.zip"/>
+            </fileset>
+        </delete>
+    </target>
+</project>

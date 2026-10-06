@@ -1,0 +1,17 @@
+{
+  "name": "wishbox/pkg-wishboxretailcrm",
+  "description": "Joomla system plugin for shared RetailCRM settings",
+  "type": "project",
+  "license": "GPL-2.0-or-later",
+  "require": {
+    "php": ">=8.5"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^12.5"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  }
+}

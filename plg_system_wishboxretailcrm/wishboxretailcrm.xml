@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="system" method="upgrade">
+    <name>plg_system_wishboxretailcrm</name>
+    <author>Nekrasov Vitaliy</author>
+    <creationDate>October 2026</creationDate>
+    <license>GNU General Public License version 2 or later</license>
+    <authorEmail>nekrasov_vitaliy@list.ru</authorEmail>
+    <version>1.0.0</version>
+    <description>PLG_SYSTEM_WISHBOXRETAILCRM_XML_DESCRIPTION</description>
+    <namespace path="src">Joomla\Plugin\System\WishboxRetailCrm</namespace>
+    <scriptfile>script.php</scriptfile>
+    <files>
+        <folder plugin="wishboxretailcrm">services</folder>
+        <folder>src</folder>
+    </files>
+    <languages>
+        <language tag="en-GB">language/en-GB/plg_system_wishboxretailcrm.ini</language>
+        <language tag="en-GB">language/en-GB/plg_system_wishboxretailcrm.sys.ini</language>
+        <language tag="ru-RU">language/ru-RU/plg_system_wishboxretailcrm.ini</language>
+        <language tag="ru-RU">language/ru-RU/plg_system_wishboxretailcrm.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                        name="retailcrm_api_url"
+                        type="url"
+                        label="PLG_SYSTEM_WISHBOXRETAILCRM_API_URL_LABEL"
+                        description="PLG_SYSTEM_WISHBOXRETAILCRM_API_URL_DESCRIPTION"
+                        required="true"
+                        filter="raw"
+                />
+                <field
+                        name="retailcrm_api_key"
+                        type="password"
+                        label="PLG_SYSTEM_WISHBOXRETAILCRM_API_KEY_LABEL"
+                        description="PLG_SYSTEM_WISHBOXRETAILCRM_API_KEY_DESCRIPTION"
+                        required="true"
+                        filter="raw"
+                />
+                <field
+                        name="retailcrm_site"
+                        type="text"
+                        label="PLG_SYSTEM_WISHBOXRETAILCRM_SITE_LABEL"
+                        description="PLG_SYSTEM_WISHBOXRETAILCRM_SITE_DESCRIPTION"
+                        required="true"
+                        filter="cmd"
+                />
+            </fieldset>
+        </fields>
+    </config>
+</extension>
