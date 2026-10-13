@@ -1,11 +1,12 @@
 # WishBox RetailCRM
 
-Joomla package that installs a system plugin with shared RetailCRM connection settings for Wishbox integrations.
+Joomla package that installs a shared RetailCRM library and a system plugin with connection settings for Wishbox integrations.
 
 ## Requirements
 
 - PHP 8.5 or later;
 - Joomla 6.1.4 or later;
+- RetailCRM PHP SDK available through `JPATH_SITE/vendor/autoload.php`;
 - Composer for development and tests;
 - Phing for building the installable package.
 
@@ -15,17 +16,20 @@ After installation, open `System - Wishbox RetailCRM` in the Joomla plugin manag
 
 - RetailCRM API URL or proxy URL;
 - RetailCRM API key;
+- optional RetailCRM proxy token;
 - RetailCRM site code.
 
-Other Joomla extensions can load the shared settings with:
+Other Joomla extensions can register the shared configuration and API client in their DI container:
 
 ```php
-use Joomla\CMS\Plugin\PluginHelper;
-use Joomla\Registry\Registry;
+use RetailCrm\Api\Client;
+use WishboxRetailCrmLibrary\Service\Provider\RetailCrmServiceProvider;
 
-$plugin = PluginHelper::getPlugin('system', 'wishboxretailcrm');
-$wishboxRetailCrmPluginParams = new Registry($plugin->params ?? '');
+$container->registerServiceProvider(new RetailCrmServiceProvider());
+$retailCrmClient = $container->get(Client::class);
 ```
+
+The client is shared within the current extension container and is created from the system plugin settings.
 
 The package installer enables the plugin automatically on its first installation.
 

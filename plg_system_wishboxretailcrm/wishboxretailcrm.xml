@@ -39,6 +39,13 @@
                         filter="raw"
                 />
                 <field
+                        name="retailcrm_proxy_token"
+                        type="password"
+                        label="PLG_SYSTEM_WISHBOXRETAILCRM_PROXY_TOKEN_LABEL"
+                        description="PLG_SYSTEM_WISHBOXRETAILCRM_PROXY_TOKEN_DESCRIPTION"
+                        filter="raw"
+                />
+                <field
                         name="retailcrm_site"
                         type="text"
                         label="PLG_SYSTEM_WISHBOXRETAILCRM_SITE_LABEL"

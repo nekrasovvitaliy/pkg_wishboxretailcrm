@@ -19,6 +19,7 @@ final class SystemPluginManifestTest extends TestCase
 	private const array CONFIGURATION_FIELDS = [
 		'retailcrm_api_url',
 		'retailcrm_api_key',
+		'retailcrm_proxy_token',
 		'retailcrm_site',
 	];
 
@@ -27,6 +28,8 @@ final class SystemPluginManifestTest extends TestCase
 		'PLG_SYSTEM_WISHBOXRETAILCRM_API_URL_DESCRIPTION',
 		'PLG_SYSTEM_WISHBOXRETAILCRM_API_KEY_LABEL',
 		'PLG_SYSTEM_WISHBOXRETAILCRM_API_KEY_DESCRIPTION',
+		'PLG_SYSTEM_WISHBOXRETAILCRM_PROXY_TOKEN_LABEL',
+		'PLG_SYSTEM_WISHBOXRETAILCRM_PROXY_TOKEN_DESCRIPTION',
 		'PLG_SYSTEM_WISHBOXRETAILCRM_SITE_LABEL',
 		'PLG_SYSTEM_WISHBOXRETAILCRM_SITE_DESCRIPTION',
 	];
@@ -62,6 +65,31 @@ final class SystemPluginManifestTest extends TestCase
 		self::assertIsArray($pluginFile);
 		self::assertCount(1, $pluginFile);
 		self::assertSame('system', (string) $pluginFile[0]['group']);
+	}
+
+	/**
+	 * Ensure the shared RetailCRM library is included in the package.
+	 *
+	 * @return void
+	 *
+	 * @since 1.0.0
+	 *
+	 * @noinspection PhpUnused
+	 */
+	public function testPackageContainsSharedLibrary(): void
+	{
+		$projectRoot = dirname(__DIR__, 3);
+		$packageManifest = simplexml_load_file($projectRoot . '/pkg_wishboxretailcrm.xml');
+
+		self::assertInstanceOf(SimpleXMLElement::class, $packageManifest);
+
+		$libraryFile = $packageManifest->xpath(
+			'files/file[@type="library" and @id="wishboxretailcrm"]'
+		);
+
+		self::assertIsArray($libraryFile);
+		self::assertCount(1, $libraryFile);
+		self::assertSame('lib_wishboxretailcrm.zip', (string) $libraryFile[0]);
 	}
 
 	/**

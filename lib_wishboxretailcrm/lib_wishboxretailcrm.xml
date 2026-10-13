@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="library" method="upgrade">
+	<name>lib_wishboxretailcrm</name>
+	<libraryname>wishboxretailcrm</libraryname>
+	<creationDate>October 2026</creationDate>
+	<author>Nekrasov Vitaliy</author>
+	<version>1.0.0</version>
+	<namespace path="src">WishboxRetailCrmLibrary</namespace>
+	<files>
+		<folder>src</folder>
+	</files>
+</extension>

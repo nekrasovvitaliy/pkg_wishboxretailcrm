@@ -9,6 +9,13 @@
             </fileset>
         </delete>
 
+        <zip destfile="lib_wishboxretailcrm.zip">
+            <fileset dir="./lib_wishboxretailcrm">
+                <include name="src/**"/>
+                <include name="lib_wishboxretailcrm.xml"/>
+            </fileset>
+        </zip>
+
         <zip destfile="plg_system_wishboxretailcrm.zip">
             <fileset dir="./plg_system_wishboxretailcrm">
                 <include name="language/**"/>
@@ -21,6 +28,7 @@
 
         <zip destfile="${package}">
             <fileset dir=".">
+                <include name="lib_wishboxretailcrm.zip"/>
                 <include name="plg_system_wishboxretailcrm.zip"/>
                 <include name="language/**"/>
                 <include name="script.php"/>
@@ -30,6 +38,7 @@
 
         <delete quiet="yes">
             <fileset dir=".">
+                <include name="lib_wishboxretailcrm.zip"/>
                 <include name="plg_system_wishboxretailcrm.zip"/>
             </fileset>
         </delete>

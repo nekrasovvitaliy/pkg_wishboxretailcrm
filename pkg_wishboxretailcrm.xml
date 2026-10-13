@@ -14,6 +14,7 @@
         <language tag="ru-RU">ru-RU/pkg_wishboxretailcrm.sys.ini</language>
     </languages>
     <files>
+        <file type="library" id="wishboxretailcrm">lib_wishboxretailcrm.zip</file>
         <file type="plugin" group="system" id="wishboxretailcrm">plg_system_wishboxretailcrm.zip</file>
     </files>
 </extension>
