@@ -9,3 +9,7 @@ defined('_JEXEC') or define('_JEXEC', 1);
 // phpcs:enable PSR1.Files.SideEffects
 
 require dirname(__DIR__) . '/vendor/autoload.php';
+require dirname(__DIR__, 2) . '/pkg_wishbox_j4/lib_wishbox/src/Dto/OrderImport/MarketplaceOrderDelivery.php';
+require dirname(__DIR__, 2) . '/pkg_wishbox_j4/lib_wishbox/src/Dto/OrderImport/MarketplaceOrderItem.php';
+require dirname(__DIR__, 2) . '/pkg_wishbox_j4/lib_wishbox/src/Dto/OrderImport/MarketplaceOrder.php';
+require dirname(__DIR__, 2) . '/pkg_wishbox_j4/lib_wishbox/src/Dto/OrderImport/OrderImportResult.php';
